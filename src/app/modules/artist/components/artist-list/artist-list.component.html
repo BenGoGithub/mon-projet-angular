@@ -1,0 +1,11 @@
+<div class="artist-list-container">
+  <h1>Liste des Artistes</h1>
+  <div class="artists-grid">
+    <div *ngFor="let artist of artists" class="artist-card">
+      <img [src]="artist.photoUrl" [alt]="artist.name" />
+      <h3>{{ artist.name }}</h3>
+      <button (click)="deleteArtist(artist.id)">Supprimer</button>
+    </div>
+  </div>
+  <app-artist-form (artistAdded)="addArtist($event)"></app-artist-form>
+</div>

@@ -1,0 +1,20 @@
+<div class="home-container">
+  <h1>Bienvenue sur notre Bibliothèque d'Artistes</h1>
+
+  <div class="image-container">
+    <img class="home-image" src="assets/images/home.jpg" alt="Image d'accueil" />
+  </div>
+
+  <div class="button-container">
+    <button class="toggle-btn" (click)="toggleDescription()">
+      {{ showDescription ? 'Masquer' : 'Plus d\'informations' }}
+    </button>
+  </div>
+
+  <div *ngIf="showDescription" class="description">
+    <p>
+      Cette application te permet de découvrir des artistes de tous horizons.
+      Navigue vers la liste des artistes pour explorer leurs profils.
+    </p>
+  </div>
+</div>
