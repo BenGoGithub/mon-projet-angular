@@ -10,4 +10,6 @@ import { NavbarComponent } from './core/components/navbar/navbar.component';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {}
+export class AppComponent {
+  appName = ' Ma Bibliothèque d\'Artistes'; // Ajoute une propriété appName
+}
