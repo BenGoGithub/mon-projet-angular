@@ -6,8 +6,8 @@ describe('ArtistListComponent Template', () => {
   it('should display the list of artists', async () => {
     const mockArtistService = {
       getArtists: jasmine.createSpy('getArtists').and.returnValue([
-        { id: 1, name: 'David Bowie', photoUrl: 'assets/images/artists/bowie.jpg' },
-        { id: 2, name: 'Nina Simone', photoUrl: 'assets/images/artists/simone.jpg' }
+        { id: 1, name: 'David Bowie', photo: 'assets/images/artists/bowie.jpg' },
+        { id: 2, name: 'Nina Simone', photo: 'assets/images/artists/simone.jpg' }
       ])
     };
 

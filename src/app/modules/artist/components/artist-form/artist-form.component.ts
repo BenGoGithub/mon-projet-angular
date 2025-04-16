@@ -17,16 +17,16 @@ export class ArtistFormComponent {
   constructor(private fb: FormBuilder) {
     this.artistForm = this.fb.group({
       name: ['', Validators.required],
-      photoUrl: ['', Validators.required]
+      photo: ['', Validators.required]
     });
   }
 
   onSubmit(): void {
     if (this.artistForm.valid) {
       const newArtist: Artist = {
-        id: Date.now(), // ID unique basé sur le timestamp
+        id: crypto.randomUUID(),
         name: this.artistForm.value.name,
-        photoUrl: this.artistForm.value.photoUrl
+        photo: this.artistForm.value.photo
       };
       this.artistAdded.emit(newArtist);
       this.artistForm.reset();

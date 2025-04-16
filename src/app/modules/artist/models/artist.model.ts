@@ -1,7 +1,5 @@
 export interface Artist {
-  id: number;
+  id: string;
   name: string;
-  genre?: string;
-  description?: string; // ? indique que la propriété est optionnelle
-  photoUrl?: string;
+  photo: string;
 }

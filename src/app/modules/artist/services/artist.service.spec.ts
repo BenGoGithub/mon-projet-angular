@@ -16,16 +16,16 @@ describe('ArtistService', () => {
 
   it('should initialize with a default list of artists', () => {
     const defaultArtists: Artist[] = [
-      { id: 1, name: 'David Bowie', photoUrl: 'assets/images/artists/bowie.jpg' },
-      { id: 2, name: 'Nina Simone', photoUrl: 'assets/images/artists/simone.jpg' },
-      { id: 3, name: 'Bob Marley', photoUrl: 'assets/images/artists/marley.jpg' },
-      { id: 4, name: 'Björk', photoUrl: 'assets/images/artists/bjork.jpg' }
+      { id: 1, name: 'David Bowie', photo: 'assets/images/artists/bowie.jpg' },
+      { id: 2, name: 'Nina Simone', photo: 'assets/images/artists/simone.jpg' },
+      { id: 3, name: 'Bob Marley', photo: 'assets/images/artists/marley.jpg' },
+      { id: 4, name: 'Björk', photo: 'assets/images/artists/bjork.jpg' }
     ];
     expect(service.getArtists()).toEqual(defaultArtists);
   });
 
   it('should add a new artist to the list', () => {
-    const newArtist: Artist = { id: 5, name: 'New Artist', photoUrl: 'assets/images/artists/new.jpg' };
+    const newArtist: Artist = { id: 5, name: 'New Artist', photo: 'assets/images/artists/new.jpg' };
     service.addArtist(newArtist);
     const updatedArtists = service.getArtists();
     expect(updatedArtists.length).toBe(5); // Vérifie que la liste a été mise à jour

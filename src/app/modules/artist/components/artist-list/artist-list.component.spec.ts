@@ -12,8 +12,8 @@ describe('ArtistListComponent', () => {
     // Mock du service ArtistService
     mockArtistService = {
       getArtists: jasmine.createSpy('getArtists').and.returnValue([
-        { id: 1, name: 'David Bowie', photoUrl: 'assets/images/artists/bowie.jpg' },
-        { id: 2, name: 'Nina Simone', photoUrl: 'assets/images/artists/simone.jpg' }
+        { id: 1, name: 'David Bowie', photo: 'assets/images/artists/bowie.jpg' },
+        { id: 2, name: 'Nina Simone', photo: 'assets/images/artists/simone.jpg' }
       ]),
       addArtist: jasmine.createSpy('addArtist'),
       deleteArtist: jasmine.createSpy('deleteArtist')
@@ -48,7 +48,7 @@ describe('ArtistListComponent', () => {
   });
 
   it('should add a new artist when the artistAdded event is emitted', () => {
-    const newArtist: Artist = { id: 3, name: 'New Artist', photoUrl: 'assets/images/artists/new.jpg' };
+    const newArtist: Artist = { id: 3, name: 'New Artist', photo: 'assets/images/artists/new.jpg' };
     component.addArtist(newArtist); // Simule l'ajout d'un nouvel artiste
     expect(mockArtistService.addArtist).toHaveBeenCalledWith(newArtist); // Vérifie que la méthode addArtist a été appelée
     expect(component.artists.length).toBe(3); // Vérifie que la liste a été mise à jour

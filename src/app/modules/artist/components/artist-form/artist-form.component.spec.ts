@@ -26,7 +26,7 @@ describe('ArtistFormComponent', () => {
 
   it('should emit an artistAdded event when the form is submitted', () => {
     component.artistForm.controls['name'].setValue('New Artist');
-    component.artistForm.controls['photoUrl'].setValue('assets/images/artists/new.jpg');
+    component.artistForm.controls['photo'].setValue('assets/images/artists/new.jpg');
 
     let emittedArtist: Artist | undefined;
     component.artistAdded.subscribe((artist: Artist) => {
@@ -37,14 +37,14 @@ describe('ArtistFormComponent', () => {
 
     expect(emittedArtist).toBeDefined(); // Vérifie qu'un artiste a été émis
     expect(emittedArtist?.name).toBe('New Artist'); // Vérifie les détails de l'artiste
-    expect(emittedArtist?.photoUrl).toBe('assets/images/artists/new.jpg');
+    expect(emittedArtist?.photo).toBe('assets/images/artists/new.jpg');
   });
 
   it('should reset the form after submission', () => {
     component.artistForm.controls['name'].setValue('New Artist');
-    component.artistForm.controls['photoUrl'].setValue('assets/images/artists/new.jpg');
+    component.artistForm.controls['photo'].setValue('assets/images/artists/new.jpg');
     component.onSubmit(); // Simule la soumission du formulaire
     expect(component.artistForm.controls['name'].value).toBe(''); // Vérifie que le formulaire a été réinitialisé
-    expect(component.artistForm.controls['photoUrl'].value).toBe('');
+    expect(component.artistForm.controls['photo'].value).toBe('');
   });
 });
